@@ -38,7 +38,7 @@
 	}
 
 	.pay__item {
-	flex-basis: calc((100% / 3) - (40px / 3));
+		flex-basis: calc((100% / 3) - (40px / 3));
 	}
 }
 
@@ -52,7 +52,7 @@
 	}
 
 	.pay__item {
-	flex-basis: calc((100% / 3) - (68px / 3));
+		flex-basis: calc((100% / 3) - (68px / 3));
 	}
 }
 
@@ -67,8 +67,8 @@
 	}
 
 	.pay__item {
-	flex-basis: auto;
-	width: 65%;
+		flex-basis: auto;
+		width: 65%;
 	}
 }
 

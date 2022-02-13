@@ -87,18 +87,10 @@ button {
 	}
 }
 
-@media (max-width: 1200px) {
-	
-}
-
 @media (max-width: 1000px) {
 	.container {
 		padding: 0 39px;
 	}
-}
-
-@media (max-width: 760px) {
-	
 }
 
 @media (max-width: 580px) {
