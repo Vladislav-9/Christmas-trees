@@ -30,11 +30,11 @@ body {
 
 h1, h2 {
 	font-family: Cormorant, serif;
-	font-weight: 700;
+/* 	font-weight: 700;
 	font-size: 70px;
 	line-height: 100%;
 	color: var(--main-color);
-	letter-spacing: 0.01em;
+	letter-spacing: 0.01em; */
 }
 
 .container {
