@@ -1,0 +1,25 @@
+{
+  "name": "christmas-trees",
+  "version": "1.0.0",
+  "description": "Christmas trees",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vladislav-9/Christmas-trees.git"
+  },
+  "author": "A.Vladislav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vladislav-9/Christmas-trees/issues"
+  },
+  "homepage": "https://github.com/Vladislav-9/Christmas-trees#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "gulp": "^4.0.2",
+    "gulp-cssimport": "^7.0.0"
+  },
+  "type": "module"
+}

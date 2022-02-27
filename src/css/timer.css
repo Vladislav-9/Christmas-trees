@@ -1,0 +1,37 @@
+.timer {
+	position: sticky;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 20px;
+	background-color: var(--second-color);
+	color: var(--main-color);
+	text-align: center;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 130%;
+	letter-spacing: 0.04em;
+}
+
+@media (max-width: 1200px) {
+	.timer {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 768px) {
+	.timer {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 580px) {
+	.timer {
+		font-size: 12px;
+	}
+
+	.timer__count {
+		display: block;
+	}
+}
