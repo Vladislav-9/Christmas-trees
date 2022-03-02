@@ -5,17 +5,17 @@ const createSnow = n => {
 			position: relative;
 		}
 		.snow {
-			width: 20px;
-			height: 20px;
+			width: 40px;
+			height: 40px;
 			position: fixed;
-			top: -20px;
+			top: -40px;
 			pointer-events: none;
 			animation: fall linear;
 			background-repeat: no-repeat;
 		}
 		@keyframes fall {
 			100% {
-				transform: translate(100vh, 100vw);
+				transform: translateY(100vh);
 			}
 		}
 	`;

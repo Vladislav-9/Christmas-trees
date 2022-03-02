@@ -2,7 +2,8 @@
   "name": "christmas-trees",
   "version": "1.0.0",
   "description": "Christmas trees",
-  "main": "index.js",
+  "main": "gulpfile.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,8 +19,12 @@
   "homepage": "https://github.com/Vladislav-9/Christmas-trees#readme",
   "devDependencies": {
     "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
-    "gulp-cssimport": "^7.0.0"
-  },
-  "type": "module"
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cssimport": "^7.0.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-rename": "^2.0.0"
+  }
 }

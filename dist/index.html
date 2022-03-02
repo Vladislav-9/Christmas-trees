@@ -23,10 +23,12 @@
 			--url-features-four: url("../img/delivery-truck.svg");
 		}
 	</style>
-	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/index.min.css">
 
 	<script src="script/burger.js" defer></script>
 	<script src="script/modal.js" defer></script>
+	<script src="script/timer.js" defer></script>
+	<script src="snow/snow.js" defer></script>
 
 </head>
 <body>
@@ -54,7 +56,7 @@
 					</li>
 				</ul>
 			</nav>
-			<button class="header__consultation">Консультация</button>
+			<button class="header__consultation" data-order="Консультация">Консультация</button>
 		</div>
 	</header>
 	<main>
@@ -227,11 +229,11 @@
 			<form class="modal__form" action="https://jsonplaceholder.typicode.com/posts" method="post">
 				<label class="modal__label">
 					<span class="modal__label-text">ФИО</span>
-					<input class="modal__input" required name="bio" type="text" placeholder="Введите ваше ФИО">
+					<input class="modal__input" required maxlength="45" title="н-р, Иванов Иван Иванович" name="bio" type="text" placeholder="Введите ваше ФИО">
 				</label>
 				<label class="modal__label modal__label_last">
 					<span class="modal__label-text">Телефон</span>
-					<input class="modal__input" required name="tel" type="tel" placeholder="Введите ваш номер телефона">
+					<input class="modal__input" required pattern="^((\+7|7|8)+([0-9]){10})$" title="н-р, +79871111111" maxlength="12" name="tel" type="tel" placeholder="Введите ваш номер телефона">
 				</label>
 				<input class="modal__order" type="hidden" name="order">
 				<button class="modal__button">Заказать звонок</button>
@@ -239,7 +241,26 @@
 		</div>
 	</div>
 	<div class="overlay overlay_consultation">
-		
+		<div class="modal">
+			<button class="modal__close">
+				<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="currentColor"/>
+				</svg>
+			</button>
+			<h2 class="modal__title">Оформить консультацию</h2>
+			<form class="modal__form" action="https://jsonplaceholder.typicode.com/posts" method="post">
+				<label class="modal__label">
+					<span class="modal__label-text">ФИО</span>
+					<input class="modal__input" required maxlength="45" title="н-р, Иванов Иван Иванович" name="bio" type="text" placeholder="Введите ваше ФИО">
+				</label>
+				<label class="modal__label modal__label_last">
+					<span class="modal__label-text">Телефон</span>
+					<input class="modal__input" required pattern="^((\+7|7|8)+([0-9]){10})$" title="н-р, +79871111111" maxlength="12" name="tel" type="tel" placeholder="Введите ваш номер телефона">
+				</label>
+				<input class="modal__order" type="hidden" name="order">
+				<button class="modal__button">Заказать звонок</button>
+			</form>
+		</div>
 	</div>
 	<svg class="hide">
 		<symbol id="logo" width="164" height="76" fill="none" xmlns="http://www.w3.org/2000/svg">

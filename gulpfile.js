@@ -1,49 +1,36 @@
+// Основной модуль
 import gulp from 'gulp';
-import browserSync from 'browser-sync';
-import cssImport from 'gulp-cssimport';
+// Импорт путей
+import { path } from "./gulp/config/path.js";
+// Импорт общих плагинов
+import { plugins } from "./gulp/config/plugins.js";
 
-export const html = () =>
-	gulp.src('src/*.html')
-		.pipe(gulp.dest('dist'))
-		.pipe(browserSync.stream());
+// Передаем значения в глобальную переменную
+global.app = {
+	path: path,
+	gulp: gulp,
+	plugins: plugins
+}
 
-export const font = () =>
-	gulp.src('src/fonts/**')
-		.pipe(gulp.dest('dist/fonts/'));
+// Импорт задач
+import { copy } from "./gulp/tasks/copy.js";
+import { reset } from "./gulp/tasks/reset.js";
+import { html } from "./gulp/tasks/html.js";
+import { server } from "./gulp/tasks/server.js";
+import { css } from "./gulp/tasks/css.js";
 
-export const css = () =>
-	gulp.src('src/css/index.css')
-		.pipe(cssImport({
-			extensions: ["css"],
-		}))
-		.pipe(gulp.dest('dist/css/'))
-		.pipe(browserSync.stream());
 
-export const image = () =>
-	gulp.src('src/img/*.*')
-		.pipe(gulp.dest('dist/img/'))
-		.pipe(browserSync.stream());
+// Наблюдатель за изменениями в файлах
+function watcher() {
+	gulp.watch(path.watch.files, copy);
+	gulp.watch(path.watch.html, html);
+	gulp.watch(path.watch.css, css);
+}
 
-export const js = () =>
-	gulp.src('src/script/*.js')
-		.pipe(gulp.dest('dist/script/'))
-		.pipe(browserSync.stream());
+const mainTasks = gulp.parallel(copy, html, css);
 
-export const snow = () =>
-	gulp.src('src/snow/**')
-		.pipe(gulp.dest('dist/snow/'));
+// Построение сценариев выполнения задач
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 
-export const server = () => {
-	browserSync.init({
-		tunnel: false,
-		server: {
-			baseDir: 'dist'
-		}
-	});
-	gulp.watch('src/css/*.css', css);
-	gulp.watch('src/*.html', html);
-	gulp.watch('src/script/*.js', js);
-	gulp.watch('src/img/*.*', image);
-};
-
-export default gulp.series(html, font, css, image, js, snow, server);
+// Выполнение сценария по умолчанию
+gulp.task('default', dev);
